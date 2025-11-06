@@ -2,6 +2,7 @@ package com.unascribed.ears.mixin;
 
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.util.AssetInfo;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +25,7 @@ import net.minecraft.util.Identifier;
 @Mixin(PlayerSkinTextureDownloader.class)
 public abstract class MixinPlayerSkinTextureDownloader {
 	@Inject(at=@At("HEAD"), method = "registerTexture", cancellable=true)
-	private static void registerTexture(Identifier textureId, NativeImage image, CallbackInfoReturnable<CompletableFuture<Identifier>> ci) {
+	private static void registerTexture(AssetInfo.TextureAsset textureAsset, NativeImage image, CallbackInfoReturnable<CompletableFuture<Identifier>> ci) {
 		EarsLog.debug(EarsLog.Tag.PLATFORM_INJECT, "Process player skin");
 		
 		// note: due to thread locality of EarsStorage the alfalfa cannot be retrieved in the async future
@@ -32,8 +33,8 @@ public abstract class MixinPlayerSkinTextureDownloader {
 		
 		MinecraftClient minecraftClient = MinecraftClient.getInstance();
 		ci.setReturnValue(CompletableFuture.supplyAsync(() -> {
-			minecraftClient.getTextureManager().registerTexture(textureId, new EarsTexture(image, alfalfa));
-			return textureId;
+			minecraftClient.getTextureManager().registerTexture(textureAsset.texturePath(), new EarsTexture(image, alfalfa));
+			return textureAsset.texturePath();
 		}, minecraftClient));
 	}
 	

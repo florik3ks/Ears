@@ -1,5 +1,6 @@
 package com.unascribed.ears.mixin;
 
+import net.minecraft.client.network.ClientPlayerLikeState;
 import org.spongepowered.asm.mixin.Mixin;
 
 import com.unascribed.ears.EarsPlayerRenderState;
@@ -47,11 +48,12 @@ public class MixinPlayerEntityRenderState implements EarsPlayerRenderState {
 
 	@Override
 	public void ears$update(AbstractClientPlayerEntity acpe, float delta) {
-		ears$capeX = MathHelper.lerp(delta, acpe.lastCapeX, acpe.capeX);
-		ears$capeY = MathHelper.lerp(delta, acpe.lastCapeY, acpe.capeY);
-		ears$capeZ = MathHelper.lerp(delta, acpe.lastCapeZ, acpe.capeZ);
-		ears$horizontalSpeed = MathHelper.lerp(delta, acpe.lastDistanceMoved, acpe.distanceMoved);
-		ears$stride = MathHelper.lerp(delta, acpe.lastStrideDistance, acpe.strideDistance);
+		ClientPlayerLikeState state = acpe.getState();
+		ears$capeX = state.lerpX(delta);
+		ears$capeY = state.lerpY(delta);
+		ears$capeZ = state.lerpZ(delta);
+		ears$horizontalSpeed = state.getLerpedDistanceMoved(delta);
+		ears$stride = state.lerpMovement(delta);
 		ears$flying = acpe.getAbilities().flying;
 	}
 

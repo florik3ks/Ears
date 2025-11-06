@@ -2,6 +2,7 @@ package com.unascribed.ears.mixin;
 
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.EntityRendererFactory.Context;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
@@ -35,18 +36,18 @@ public abstract class MixinPlayerEntityRenderer extends LivingEntityRenderer<Abs
 	}
 	
 	@Inject(at = @At("TAIL"), method = "renderLeftArm")
-	private void renderLeftArm(MatrixStack ms, VertexConsumerProvider vcp, int light, Identifier skinTexture, boolean sleeveVisible, CallbackInfo ci) {
-		ears$featureRenderer.renderLeftArm(ms, vcp, light);
+	private void renderLeftArm(MatrixStack ms, OrderedRenderCommandQueue queue, int light, Identifier skinTexture, boolean sleeveVisible, CallbackInfo ci) {
+		ears$featureRenderer.renderLeftArm(ms, queue, light);
 	}
 	
 	@Inject(at = @At("TAIL"), method = "renderRightArm")
-	private void renderRightArm(MatrixStack ms, VertexConsumerProvider vcp, int light, Identifier skinTexture, boolean sleeveVisible, CallbackInfo ci) {
-		ears$featureRenderer.renderRightArm(ms, vcp, light);
+	private void renderRightArm(MatrixStack ms, OrderedRenderCommandQueue queue, int light, Identifier skinTexture, boolean sleeveVisible, CallbackInfo ci) {
+		ears$featureRenderer.renderRightArm(ms, queue, light);
 	}
 	
 	@Inject(at=@At("TAIL"), method="updateRenderState")
 	public void ears$updateRenderState(AbstractClientPlayerEntity p, PlayerEntityRenderState s, float f, CallbackInfo ci) {
-		((EarsPlayerRenderState)s).ears$update(p, f);
+		((EarsPlayerRenderState)s).ears$update(p., f);
 	}
 	
 }

@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb5c41b7-be48-49b6-9358-db3bf10f9cf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.envrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flake.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flake.nix" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform-fabric-1.21.9/src/main/java/com/unascribed/ears/EarsFeatureRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../platform-fabric-1.21.9/src/main/java/com/unascribed/ears/EarsFeatureRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform-fabric-1.21.9/src/main/java/com/unascribed/ears/mixin/MixinPlayerEntityRenderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../platform-fabric-1.21.9/src/main/java/com/unascribed/ears/mixin/MixinPlayerEntityRenderState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/unascribed/ears/common/EarsRenderer.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
