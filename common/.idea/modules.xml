@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.agent.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.api.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.js.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.legacy.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.mixin.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.mixin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.modern.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.modern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.normal.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.normal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ears-common.vlegacy.iml" filepath="$PROJECT_DIR$/.idea/modules/ears-common.vlegacy.iml" />
+    </modules>
+  </component>
+</project>
