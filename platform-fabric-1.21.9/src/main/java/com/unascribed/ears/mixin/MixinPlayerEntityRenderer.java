@@ -9,6 +9,7 @@ import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.render.entity.state.PlayerEntityRenderState;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.PlayerLikeEntity;
 import net.minecraft.util.Identifier;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -46,8 +47,8 @@ public abstract class MixinPlayerEntityRenderer extends LivingEntityRenderer<Abs
 	}
 	
 	@Inject(at=@At("TAIL"), method="updateRenderState")
-	public void ears$updateRenderState(AbstractClientPlayerEntity p, PlayerEntityRenderState s, float f, CallbackInfo ci) {
-		((EarsPlayerRenderState)s).ears$update(p., f);
+	public void ears$updateRenderState(PlayerLikeEntity p, PlayerEntityRenderState s, float f, CallbackInfo ci) {
+		((EarsPlayerRenderState)s).ears$update((AbstractClientPlayerEntity) p, f);
 	}
 	
 }

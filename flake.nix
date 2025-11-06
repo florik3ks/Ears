@@ -9,10 +9,10 @@
       {
         devShells.default = pkgs.mkShell {
           packages = [
-            pkgs.jdk8
             pkgs.jdk21
-            pkgs.jdk11
             pkgs.jdk17
+            pkgs.jdk11
+            pkgs.jdk8
             pkgs.gradle
             pkgs.jdt-language-server
             (pkgs.jetbrains.idea-community.override {
@@ -45,7 +45,6 @@
           ];
 
           shellHook = ''
-            export JAVA_HOME=${pkgs.jdk8}
             export JAVA8_HOME=${pkgs.jdk8}
             export JAVA11_HOME=${pkgs.jdk11}
             export JAVA17_HOME=${pkgs.jdk17}

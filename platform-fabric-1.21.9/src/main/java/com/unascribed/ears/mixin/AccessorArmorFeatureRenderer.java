@@ -1,5 +1,6 @@
 package com.unascribed.ears.mixin;
 
+import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -26,6 +27,7 @@ public interface AccessorArmorFeatureRenderer<S extends BipedEntityRenderState, 
 	boolean ears$usesSecondLayer(EquipmentSlot slot);
 
 	@Invoker("renderArmor")
-	void ears$renderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers, ItemStack stack, EquipmentSlot slot, int light, A armorModel);
+	void ears$renderArmor(MatrixStack matrices, OrderedRenderCommandQueue orderedRenderCommandQueue, ItemStack stack, EquipmentSlot slot, int light, S bipedEntityRenderStat);
+//	void ears$renderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers, ItemStack stack, EquipmentSlot slot, int light, A armorModel);
 	
 }

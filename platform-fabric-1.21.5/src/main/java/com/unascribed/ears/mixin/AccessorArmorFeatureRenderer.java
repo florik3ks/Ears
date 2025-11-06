@@ -22,8 +22,6 @@ public interface AccessorArmorFeatureRenderer<S extends BipedEntityRenderState, 
 	
 	@Invoker("getModel")
 	BipedEntityModel<?> ears$getArmor(S state, EquipmentSlot slot);
-	@Invoker("usesInnerModel")
-	boolean ears$usesSecondLayer(EquipmentSlot slot);
 
 	@Invoker("renderArmor")
 	void ears$renderArmor(MatrixStack matrices, VertexConsumerProvider vertexConsumers, ItemStack stack, EquipmentSlot slot, int light, A armorModel);
